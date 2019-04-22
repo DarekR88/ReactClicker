@@ -22,6 +22,12 @@ class App extends Component {
     })
   }
 
+  handleCorrect = () => {
+    this.setState({
+      currentScore: this.state.currentScore +1
+    })
+  }
+
   shuffleImages = (array) => {
     array.sort(() => Math.random() - .5)
   }

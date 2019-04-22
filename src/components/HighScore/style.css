@@ -1,0 +1,24 @@
+.scoreBoard{
+    background-color: lightsalmon;
+    width: 670px;
+    height: 75px;
+    margin-bottom: 10px;
+}
+
+.title{
+    width: 670px;
+    background-color: aquamarine;
+    height: 45px;
+}
+
+.instructions{
+    background-color: lightgreen;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 670px;
+}
+
+.hScore{
+    padding-top: 10px;
+}
+
