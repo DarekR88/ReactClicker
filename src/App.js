@@ -14,6 +14,8 @@ class App extends Component {
   imageClicked = id => {
     this.shuffleImages(this.state.characters)
     this.setState({ characters })
+    this.handleGuess(id)
+    this.handleHighScore()
   }
 
   gameOver = () => {
@@ -22,10 +24,33 @@ class App extends Component {
     })
   }
 
-  handleCorrect = () => {
-    this.setState({
-      currentScore: this.state.currentScore +1
-    })
+  handleGuess = (id) => {
+    let characters = [...this.state.characters]
+    if (characters[id].clicked === false) {
+      characters[id].clicked = true;
+      this.setState({
+        currentScore: this.state.currentScore + 1,
+        characters
+      })
+    } else {
+      this.setState({
+        currentScore: 0
+      })
+      // for (let i=0; i<characters.length; i++){
+      //   characters[i].clicked=false;
+      //   this.setState({
+      //     characters
+      //   })
+      // }
+    }
+  }
+
+  handleHighScore = () => {
+    if (this.state.currentScore > this.state.highScore) {
+      this.setState({
+        highScore: this.state.currentScore
+      })
+    }
   }
 
   shuffleImages = (array) => {
